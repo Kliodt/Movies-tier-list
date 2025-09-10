@@ -1,0 +1,111 @@
+:root {
+  --background-body: #242222;
+  /* --background: #161f27; */
+  /* --background-alt: #1a242f; */
+  /* --selection: #1c76c5; */
+  /* --text-main: #dbdbdb; */
+  /* --text-bright: #fff; */
+  /* --text-muted: #a9b1ba; */
+  /* --links: #41adff; */
+  /* --focus: #0096bfab; */
+  /* --border: #526980; */
+  /* --code: #ffbe85; */
+  /* --animation-duration: 0.1s; */
+  /* --button-base: #0c151c; */
+  /* --button-hover: #040a0f; */
+  /* --scrollbar-thumb: var(--button-hover); */
+  /* --scrollbar-thumb-hover: color-mod(var(--scrollbar-thumb) lightness(-30%)); */
+  /* --form-placeholder: #a9a9a9; */
+  /* --form-text: #fff; */
+  /* --variable: #d941e2; */
+  /* --highlight: #efdb43; */
+  /* --select-arrow: svg-load('./assets/select-arrow.svg', fill: #efefef); */
+}
+
+/* button set */
+.button-set button {
+    margin: 0;
+    border-radius: 0;
+}
+
+.button-set :first-child {
+    border-radius: 100px 0 0 100px;
+}
+
+.button-set :last-child {
+    border-radius: 0 100px 100px 0;
+}
+
+/* tierlist table */
+
+td {
+    border: 1px solid black;
+    background-color: #1A1A17;
+}
+
+table#tierlist .col-1 {
+    min-width: 90px;
+    min-height: 90px;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+    color: #333333;
+}
+
+#title {
+    text-align: center;
+}
+
+
+/* card variants */
+
+.poster-card {
+    display: inline-block;
+    margin: 3px;
+    /* box-shadow: 0 0 4px 2px rgb(93, 93, 93); */
+}
+
+.poster-card img {
+    height: 90px;
+    transition: transform 0.2s ease;
+    border: 1px solid rgba(90,90,90,0.5);
+}
+
+.poster-card img:hover {
+    transform: scale(1.1);
+}
+
+/* .name-card a {
+    text-decoration: none;
+
+} */
+
+.name-w-poster-card {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+
+.name-w-poster-card a {
+    color: var(--text-bright);
+}
+
+.name-w-poster-card img {
+    height: 90px;
+    min-width: auto;
+    border: 1px solid rgba(90,90,90,0.5);
+    transition: transform 0.2s ease;
+}
+
+.name-w-poster-card .comment {
+    font-size: small;
+    color: color-mix(in srgb, var(--text-main) 50%, transparent);
+}
+
+.name-w-poster-card:has(a:hover) img {
+    transform: scale(1.08);
+}
+

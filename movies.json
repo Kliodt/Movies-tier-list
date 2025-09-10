@@ -1,0 +1,25 @@
+{
+    "config": {
+        "lang": "en",
+        "title": "My favorite movies"
+    },
+    "movies": [
+        {
+            "imdb": "0111161",
+            "tier": "A"
+        },
+        {
+            "imdb": "0111161",
+            "tier": "A"
+        },
+        {
+            "imdb": "0111161",
+            "tier": "C"
+        },
+        {
+            "imdb": "0111161",
+            "tier": "A"
+        }
+
+    ]
+}

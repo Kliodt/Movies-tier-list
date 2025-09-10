@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies tier list</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/121ae53562.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <br/>
+
+    <h1 id="title">Movies tier list</h1>
+
+    <div class="button-set" style="margin: 10px 0;">
+        <button onclick="changeTierlistMode(TierlistType.NAMES)">
+            <i class="fa-solid fa-list-ul"></i>
+        </button>
+        <button onclick="changeTierlistMode(TierlistType.POSTERS)">
+            <i class="fa-solid fa-image"></i>
+        </button>
+        <button onclick="changeTierlistMode(TierlistType.NAMES_AND_POSTERS)">
+            <i class="fa-solid fa-newspaper"></i>
+        </button>
+    </div>
+
+    <div>
+        <table id="tierlist">
+            <tr>
+                <td class="col-1" style="background-color: #FF7F7F;">S</td>
+                <td class="col-2" id="tier-s"></td>
+            </tr>
+            <tr>
+                <td class="col-1" style="background-color: #FFBF7F;">A</td>
+                <td class="col-2" id="tier-a"></td>
+            </tr>
+            <tr>
+                <td class="col-1" style="background-color: #FFDF7F;">B</td>
+                <td class="col-2" id="tier-b"></td>
+            </tr>
+            <tr>
+                <td class="col-1" style="background-color: #FFFF7F;">C</td>
+                <td class="col-2" id="tier-c"></td>
+            </tr>
+            <tr>
+                <td class="col-1" style="background-color: #BFFF7F;">D</td>
+                <td class="col-2" id="tier-d"></td>
+            </tr>
+            <tr style="opacity: 0;"><td style="opacity: 0; border: none;"><br/><br/><br/><br/></td></tr>
+            <tr>
+                <td class="col-1" style="background-color: #8a8a8a;">?</td>
+                <td class="col-2" id="tier-unk"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="height: 50vh;"></div>
+    
+</body>
+</html>
