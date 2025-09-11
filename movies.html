@@ -15,15 +15,35 @@
 
     <h1 id="title">Movies tier list</h1>
 
-    <div class="button-set" style="margin: 10px 0;">
-        <button onclick="changeTierlistMode(TierlistType.NAMES)">
-            <i class="fa-solid fa-list-ul"></i>
-        </button>
-        <button onclick="changeTierlistMode(TierlistType.POSTERS)">
-            <i class="fa-solid fa-image"></i>
-        </button>
-        <button onclick="changeTierlistMode(TierlistType.NAMES_AND_POSTERS)">
-            <i class="fa-solid fa-newspaper"></i>
+    <br/>
+
+    <div class="flex-button-container-1">
+        <span class="button-set">
+            <button onclick="changeTierlistMode(TierlistType.NAMES)">
+                <i class="fa-solid fa-list-ul"></i>
+            </button>
+            <button onclick="changeTierlistMode(TierlistType.POSTERS)">
+                <i class="fa-solid fa-image"></i>
+            </button>
+            <button onclick="changeTierlistMode(TierlistType.NAMES_AND_POSTERS)">
+                <i class="fa-solid fa-newspaper"></i>
+            </button>
+        </span>
+
+        <span class="button-set">
+            <button onclick="changePosterHeight(PosterHeight.SMALL)">
+                <i class="fa-solid fa-s"></i>
+            </button>
+            <button onclick="changePosterHeight(PosterHeight.NORMAL)">
+                <i class="fa-solid fa-m"></i>
+            </button>
+            <button onclick="changePosterHeight(PosterHeight.LARGE)">
+                <i class="fa-solid fa-l"></i>
+            </button>
+        </span>
+    
+        <button class="button-rounded" onclick="downloadCurrentList()">
+            <i class="fa-solid fa-download"></i>
         </button>
     </div>
 
@@ -58,6 +78,12 @@
     </div>
 
     <div style="height: 50vh;"></div>
+
+    <div style="text-align: center;">
+        <a href="https://github.com/Kliodt/Movies-tier-list">
+            Source code: <i class="fa-brands fa-github"></i>
+        </a>
+    </div>
     
 </body>
 </html>
