@@ -18,26 +18,26 @@
     <br/>
 
     <div class="flex-button-container-1">
-        <span class="button-set">
-            <button onclick="changeTierlistMode(TierlistType.NAMES)">
+        <span class="button-set" id="tierlist-type-button-set">
+            <button class="selected" onclick="changeTierlistMode(this.dataset.tag)" data-tag="names">
                 <i class="fa-solid fa-list-ul"></i>
             </button>
-            <button onclick="changeTierlistMode(TierlistType.POSTERS)">
+            <button onclick="changeTierlistMode(this.dataset.tag)" data-tag="posters">
                 <i class="fa-solid fa-image"></i>
             </button>
-            <button onclick="changeTierlistMode(TierlistType.NAMES_AND_POSTERS)">
+            <button onclick="changeTierlistMode(this.dataset.tag)" data-tag="combined">
                 <i class="fa-solid fa-newspaper"></i>
             </button>
         </span>
 
-        <span class="button-set">
-            <button onclick="changePosterHeight(PosterHeight.SMALL)">
+        <span class="button-set" id="poster-size-button-set">
+            <button onclick="changePosterHeight(this.dataset.tag)" data-tag="90px">
                 <i class="fa-solid fa-s"></i>
             </button>
-            <button onclick="changePosterHeight(PosterHeight.NORMAL)">
+            <button onclick="changePosterHeight(this.dataset.tag)" data-tag="150px">
                 <i class="fa-solid fa-m"></i>
             </button>
-            <button onclick="changePosterHeight(PosterHeight.LARGE)">
+            <button onclick="changePosterHeight(this.dataset.tag)" data-tag="200px">
                 <i class="fa-solid fa-l"></i>
             </button>
         </span>

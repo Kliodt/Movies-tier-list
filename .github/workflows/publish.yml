@@ -22,9 +22,12 @@ jobs:
         run: |
           mkdir build
           cp movies.html build/
-          cp movies.json build/
           cp style.css build/
           cp script.js build/
+
+      - name: Fetch extra movie data
+        run: |
+          node ./load_extra_movie_data.js ./movies.json ./build/movies.ext.json
 
       - name: Upload static files as artifact
         id: deployment

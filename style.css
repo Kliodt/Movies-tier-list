@@ -1,24 +1,25 @@
 :root {
-  --background-body: #242222;
+  --background-body: hsl(0, 3%, 13%);
   /* --background: #161f27; */
   /* --background-alt: #1a242f; */
   /* --selection: #1c76c5; */
-  /* --text-main: #dbdbdb; */
-  /* --text-bright: #fff; */
-  /* --text-muted: #a9b1ba; */
-  /* --links: #41adff; */
-  /* --focus: #0096bfab; */
-  /* --border: #526980; */
+  --text-bright: hsl(0, 0%, 100%);
+  --text-main: hsl(0, 0%, 95%);
+  --text-muted: hsl(0, 0%, 75%);
+  /* --links: hsl(0, 100%, 75%); */
+  --focus: hsla(0, 100%, 35%, 0.7);
+  --border: hsl(0, 0%, 40%);
   /* --code: #ffbe85; */
-  /* --animation-duration: 0.1s; */
-  /* --button-base: #0c151c; */
-  /* --button-hover: #040a0f; */
+  --animation-duration: 0.1s;
+  --button-base: hsl(0, 0%, 20%);
+  --button-hover: hsl(0, 0%, 25%);
+  --button-selected: hsl(0, 80%, 40%); /* my addition */
   /* --scrollbar-thumb: var(--button-hover); */
   /* --scrollbar-thumb-hover: color-mod(var(--scrollbar-thumb) lightness(-30%)); */
   /* --form-placeholder: #a9a9a9; */
   /* --form-text: #fff; */
   /* --variable: #d941e2; */
-  /* --highlight: #efdb43; */
+  /* --highlight: hsl(53, 84%, 60%); */
   /* --select-arrow: svg-load('./assets/select-arrow.svg', fill: #efefef); */
 
   --poster-height: 90px;
@@ -30,6 +31,10 @@
     border-radius: 0;
 }
 
+button {
+    border: 1px solid color-mix(in srgb, var(--border) 40%, transparent)
+}
+
 .button-set :first-child {
     border-radius: 100px 0 0 100px;
 }
@@ -38,8 +43,13 @@
     border-radius: 0 100px 100px 0;
 }
 
+.button-set button.selected {
+    background-color: var(--button-selected);
+}
+
 button.button-rounded {
     border-radius: 100px;
+    margin: 0;
 }
 
 .flex-button-container-1 {
@@ -67,7 +77,7 @@ button.button-rounded {
 
 td {
     border: 1px solid black;
-    background-color: #1A1A17;
+    background-color: hsl(0, 0%, 10%);
 }
 
 table#tierlist .col-1 {
@@ -104,20 +114,19 @@ table#tierlist .col-1 {
     transform: scale(1.1);
 }
 
-/* .name-card a {
-    text-decoration: none;
-
-} */
+.name-card a {
+    color: var(--text-main);
+}
 
 .name-w-poster-card {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 12px;
 }
 
-
 .name-w-poster-card a {
-    color: var(--text-bright);
+    color: var(--text-main);
+    font-size: 1.5rem;
 }
 
 .name-w-poster-card img {
@@ -127,12 +136,20 @@ table#tierlist .col-1 {
     transition: transform 0.2s ease;
 }
 
+.name-w-poster-card .details {
+    color: var(--text-muted);
+}
+
 .name-w-poster-card .comment {
-    font-size: small;
-    color: color-mix(in srgb, var(--text-main) 50%, transparent);
+    font-size: 0.8rem;
+    color: var(--text-muted);
 }
 
 .name-w-poster-card:has(a:hover) img {
     transform: scale(1.08);
 }
 
+/* star */
+.fa-star {
+    color: rgb(255, 200, 20);
+}
