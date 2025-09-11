@@ -1,6 +1,7 @@
 {
     "config": {
-        "title": "Мой топ фильмов"
+        "title": "Мой топ фильмов",
+        "has_extra_info": false
     },
     "movies": [
         {

@@ -110,7 +110,7 @@ function changePosterHeight(posterHeight = null) {
     localStorage.setItem("poster-height", posterHeight);
 }
 
-async function updateImdbDataRequired() {
+async function updateImdbDataAll() {
     const getImdbData_V1 = async (movieId) => {
         movieId = String(movieId)
         if (!movieId.startsWith('tt')) {
@@ -149,7 +149,7 @@ async function updateImdbDataRequired() {
     allMovies = await Promise.all(
         allMovies.map(async el => {
             let imdbData = null;
-            if (el.imdb && (!el.url || !el.year || !el.title || !el.poster)) {
+            if (el.imdb) {
                 try {
                     imdbData = await getImdbData_V1(el.imdb);
                 } catch {}
@@ -162,23 +162,22 @@ async function updateImdbDataRequired() {
 
 async function main() {
 
-    const getMovies = async () => {
-        return await (await fetch("./movies.json")).json();
-    }
-
     try {
-        const {config, movies} = await getMovies();
+        const {config, movies} = await (await fetch("./movies.ext.json")).json();
+        
         // update title
         if (config && ("title" in config)) {
             document.title = config.title;
             $('#title').text(config.title);
         }
-        if (movies) {
-            allMovies = movies;
+
+        allMovies = movies || [];
+        
+        if (!config.has_extra_info) {
+            await updateImdbDataAll();
         }
 
-        await updateImdbDataRequired();
-
+        // todo: highlight selected option
         changeTierlistMode(null);
 
         changePosterHeight(null);
