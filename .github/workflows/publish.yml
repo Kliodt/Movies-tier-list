@@ -21,7 +21,7 @@ jobs:
       - name: Copy necessary files
         run: |
           mkdir build
-          cp movies.html build/
+          cp index.html build/
           cp style.css build/
           cp script.js build/
 
