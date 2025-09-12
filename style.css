@@ -73,6 +73,12 @@ button.button-rounded {
     }
 } */
 
+.fredoka-fnt {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 400;
+    font-size: 1.1em;
+}
+
 /* tierlist table */
 
 td {

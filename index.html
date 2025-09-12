@@ -6,10 +6,16 @@
     <title>Movies tier list</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.min.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/121ae53562.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
     <script src="./script.js" defer></script>
 </head>
+<style id="language-style">
+    .ru { display: none !important; }
+</style>
 <body>
     <br/>
 
@@ -31,20 +37,29 @@
         </span>
 
         <span class="button-set" id="poster-size-button-set">
-            <button onclick="changePosterHeight(this.dataset.tag)" data-tag="90px">
-                <i class="fa-solid fa-s"></i>
+            <button onclick="changePosterHeight(this.dataset.tag)" data-tag="90px" class="fredoka-fnt">
+                S
             </button>
-            <button onclick="changePosterHeight(this.dataset.tag)" data-tag="150px">
-                <i class="fa-solid fa-m"></i>
+            <button onclick="changePosterHeight(this.dataset.tag)" data-tag="150px" class="fredoka-fnt">
+                M
             </button>
-            <button onclick="changePosterHeight(this.dataset.tag)" data-tag="200px">
-                <i class="fa-solid fa-l"></i>
+            <button onclick="changePosterHeight(this.dataset.tag)" data-tag="200px" class="fredoka-fnt">
+                L
             </button>
         </span>
     
         <button class="button-rounded" onclick="downloadCurrentList()">
             <i class="fa-solid fa-download"></i>
         </button>
+
+        <span class="button-set" id="choose-lang-button-set">
+            <button onclick="changeLanguage(this.dataset.tag)" data-tag="en" class="fredoka-fnt">
+                EN
+            </button>
+            <button onclick="changeLanguage(this.dataset.tag)" data-tag="ru" class="fredoka-fnt">
+                RU
+            </button>
+        </span>
     </div>
 
     <div>

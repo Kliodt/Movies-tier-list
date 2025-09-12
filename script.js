@@ -17,8 +17,11 @@ function changeTierlistMode(type = null) {
     }
     const getCardWithNameHTML = (movieItem, idx) => {
         return `<li class='name-card' data-idx=${idx}>
-            <a href=${movieItem.url} target='_blank'>
-                ${movieItem.title}
+            <a href=${movieItem.url} target='_blank' class='en'>
+                ${movieItem.title || '???'}
+            </a>
+            <a href=${movieItem.url} target='_blank' class='ru'>
+                ${movieItem.title_ru || movieItem.title || '???'}
             </a>
         </li>`
     }
@@ -36,7 +39,8 @@ function changeTierlistMode(type = null) {
             return movieItem.rating ? `<span style='white-space: nowrap;'>${star} ${movieItem.rating}</span>` : null;
         }
         const getTitle = () => {
-            return `<a href=${movieItem.url} target='_blank'>${movieItem.title || '???'}</a>`;
+            return `<a href=${movieItem.url} target='_blank' class='en'>${movieItem.title || '???'}</a>
+                <a href=${movieItem.url} target='_blank' class='ru'>${movieItem.title_ru || movieItem.title || '???'}</a>`;
         }
         const getDirectors = () => {
             return movieItem?.directors?.map(d => d.name) || [];
@@ -98,11 +102,11 @@ function changeTierlistMode(type = null) {
             Object.values(tiers).forEach(el => el.html('<ul>' + el.html() + '</ul>'));
         }
     }
+    
     const updateDocumentButtons = (type) => {
         $('#tierlist-type-button-set button').removeClass('selected');
         $(`#tierlist-type-button-set button[data-tag=${type}]`).addClass('selected');
     }
-    
     if (type === null) {
         type = JSON.parse(localStorage.getItem("tierlist-mode"));
     }
@@ -143,6 +147,23 @@ function changePosterHeight(posterHeight = null) {
     $(":root").css("--poster-height", posterHeight);
     localStorage.setItem("poster-height", posterHeight);
     updateDocumentButtons(posterHeight);
+}
+
+function changeLanguage(lang = null) {
+    const updateDocumentButtons = (tag) => {
+        $('#choose-lang-button-set button').removeClass('selected');
+        $(`#choose-lang-button-set button[data-tag=${tag}]`).addClass('selected');
+    }
+    if (lang === null) {
+        lang = localStorage.getItem("language");
+    }
+    if (lang === 'ru') {
+        $('#language-style').html(".en { display: none !important; }")
+    } else {
+        $('#language-style').html(".ru { display: none !important; }")
+    }
+    localStorage.setItem("language", lang);
+    updateDocumentButtons(lang);
 }
 
 async function updateImdbDataAll() {
@@ -206,6 +227,8 @@ async function main() {
         changeTierlistMode(null);
 
         changePosterHeight(null);
+
+        changeLanguage(null);
         
     } catch (err) {
         console.log(err);

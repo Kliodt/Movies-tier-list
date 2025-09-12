@@ -3,3 +3,7 @@ dev.md
 dev.py
 
 movies.ext.json
+*.sparql
+
+/wikidata
+

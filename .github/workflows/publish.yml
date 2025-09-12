@@ -25,6 +25,10 @@ jobs:
           cp style.css build/
           cp script.js build/
 
+      - name: Prepare wikidata dl
+        run: |
+          pip install wikidata-dl
+
       - name: Fetch extra movie data
         run: |
           node ./load_extra_movie_data.js ./movies.json ./build/movies.ext.json
