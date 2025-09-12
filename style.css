@@ -23,6 +23,19 @@
   /* --select-arrow: svg-load('./assets/select-arrow.svg', fill: #efefef); */
 
   --poster-height: 90px;
+  --tier-col-width: 90px;
+}
+
+@media (width < 700px) and (width > 500px) {
+    :root {
+        --tier-col-width: 50px;
+    }
+}
+
+@media (width <= 500px) {
+    :root {
+        --tier-col-width: 20px;
+    }
 }
 
 /* button set */
@@ -81,15 +94,19 @@ button.button-rounded {
 
 /* tierlist table */
 
+table#tierlist {
+    min-width: 100%;
+}
+
 td {
     border: 1px solid black;
     background-color: hsl(0, 0%, 10%);
 }
 
 table#tierlist .col-1 {
-    min-width: 90px;
+    min-width: var(--tier-col-width);
     min-height: 90px;
-    width: 90px;
+    width: var(--tier-col-width);
     height: 90px;
     text-align: center;
     vertical-align: middle;

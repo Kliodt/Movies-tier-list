@@ -105,7 +105,7 @@ function changeTierlistMode(type = null) {
     
     const updateDocumentButtons = (type) => {
         $('#tierlist-type-button-set button').removeClass('selected');
-        $(`#tierlist-type-button-set button[data-tag=${type}]`).addClass('selected');
+        $(`#tierlist-type-button-set button[data-tag='${type}']`).addClass('selected');
     }
     if (type === null) {
         type = JSON.parse(localStorage.getItem("tierlist-mode"));
@@ -136,7 +136,7 @@ function downloadCurrentList() {
 function changePosterHeight(posterHeight = null) {
     const updateDocumentButtons = (tag) => {
         $('#poster-size-button-set button').removeClass('selected');
-        $(`#poster-size-button-set button[data-tag=${tag}]`).addClass('selected');
+        $(`#poster-size-button-set button[data-tag='${tag}']`).addClass('selected');
     }
     if (posterHeight === null) {
         posterHeight = localStorage.getItem("poster-height");
@@ -152,7 +152,7 @@ function changePosterHeight(posterHeight = null) {
 function changeLanguage(lang = null) {
     const updateDocumentButtons = (tag) => {
         $('#choose-lang-button-set button').removeClass('selected');
-        $(`#choose-lang-button-set button[data-tag=${tag}]`).addClass('selected');
+        $(`#choose-lang-button-set button[data-tag='${tag}']`).addClass('selected');
     }
     if (lang === null) {
         lang = localStorage.getItem("language");
