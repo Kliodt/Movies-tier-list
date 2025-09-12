@@ -36,7 +36,11 @@ function fetchRussianMovieNamesAll(imdbIdsAll) {
     const data = JSON.parse(fs.readFileSync('wikidata/wd_query.json', {encoding: 'utf-8'}));
     const bindings = data?.results?.bindings;
     const ret = {};
-    bindings.forEach(el => ret[el?.imdbId?.value] = el?.movieLabel?.value);
+    bindings.forEach(el => {
+        const val = el?.movieLabel?.value;
+        if (!val || val.length === 0 || val.startsWith('Q')) return;
+        ret[el?.imdbId?.value] = val;
+    });
     return ret;
 }
 

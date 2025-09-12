@@ -160,6 +160,7 @@ function changeLanguage(lang = null) {
     if (lang === 'ru') {
         $('#language-style').html(".en { display: none !important; }")
     } else {
+        lang = 'en';
         $('#language-style').html(".ru { display: none !important; }")
     }
     localStorage.setItem("language", lang);
