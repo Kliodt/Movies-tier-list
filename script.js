@@ -209,8 +209,8 @@ async function updateImdbDataAll() {
 async function main() {
 
     try {
-        let response = await fetch("./movies.ext.json");
-        if (!response.ok) response = await fetch("./movies.json");
+        let response = await fetch(`./movies.ext.json?v=${Date.now()}`);
+        if (!response.ok) response = await fetch(`./movies.json?v=${Date.now()}`);
         const { config, movies } = await response.json();
         
         // update title
