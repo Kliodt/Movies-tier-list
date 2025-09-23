@@ -109,9 +109,14 @@ table#tierlist .col-1 {
     width: var(--tier-col-width);
     height: 90px;
     text-align: center;
-    vertical-align: middle;
     font-size: 20px;
     color: #333333;
+    padding: 10px 0;
+}
+
+table#tierlist .tier-label {
+    position: sticky;
+    top: 10px;
 }
 
 #title {
