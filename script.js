@@ -139,7 +139,7 @@ function changePosterHeight(posterHeight = null) {
         $(`#poster-size-button-set button[data-tag='${tag}']`).addClass('selected');
     }
     if (posterHeight === null) {
-        posterHeight = localStorage.getItem("poster-height");
+        posterHeight = localStorage.getItem("poster-height") || "";
     }
     if (!posterHeight.match(/^\d+px$/g)) {
         posterHeight = '150px';

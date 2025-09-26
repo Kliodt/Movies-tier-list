@@ -66,6 +66,7 @@ async function main() {
         exit(-1);
     }
 
+    // fetch imdb data
     const validIds = [];
 
     for (let i = 0; i < movies.length; ++i) {
@@ -81,9 +82,20 @@ async function main() {
             console.error(err);
         }
         console.log(`Done ${i+1} / ${movies.length}`);
-        await sleep(500);
+        await sleep(200);
     }
 
+    // check duplicates
+    const idsSet = new Set()
+    const duplicates = [];
+    validIds.forEach(id => {
+        if (idsSet.has(id)) duplicates.push(id);
+        else idsSet.add(id);
+    });
+    if (duplicates.length) console.error('Found repeated movies: ', duplicates.toString());
+    else console.log('Ok! All ids are unique!');
+
+    // fetch russian titles
     const idToRussianTitle = fetchRussianMovieNamesAll(validIds);
     movies.forEach(movie => movie.title_ru = idToRussianTitle[movie?.imdb]);
     console.log("Russian titles fetched");
